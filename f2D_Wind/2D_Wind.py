@@ -31,8 +31,8 @@ w_direction[6] = 3
 #plt.imshow(w_direction)
 
 
-def partTransport(direction, particles, eruption, q):
-    ''' calculates transport of particles, this works fine'''
+def partTransport(direction, particles, eruption, iterations):
+    ''' calculates transport of particles'''
 
     rows = int(np.shape(particles)[0])
     cols = int(np.shape(particles)[1])
@@ -41,125 +41,62 @@ def partTransport(direction, particles, eruption, q):
 
     i = 0
     j = 0
+    q = 0
 
-    while i < rows:
-        # set origin of volcanic ash plume with amount of particles in air
-        temp_particles = np.zeros((rows,cols))
-        temp_particles[6, 6] = particles[6, 6] + int(eruption[q])
-        print("Eruption value at iteration ", q + 1, " :",  int(eruption[q]))
+    for v in range(0,iterations):
+        print("Eruption value at iteration ", q + 1, " :", int(eruption[q]))
 
-        #maybe introduce temporary second array that saves calculated values
+        while i < rows:
+            # set origin of volcanic ash plume with amount of particles in air
+            temp_particles = np.zeros((rows,cols))
+            temp_particles[6, 6] = particles[6, 6] + int(eruption[q])
 
+            while j < cols:
+                if direction[i, j] == 0:
+                    # top left
+                    temp_particles[i - 1, j - 1] = particles[i, j] * 0.5
 
-        while j < cols:
+                elif direction[i, j] == 1:
+                    # top middle
+                    temp_particles[i - 1, j] = particles[i, j] * 0.5
 
-            if direction[i,j] == 0:
-                #top left
-                try:
-                    temp_particles[i-1,j-1] = particles[i,j]*0.5
-                    i += 1
-                    j += 1
-                except:
-                    i += 1
-                    j += 1
+                elif direction[i, j] == 2:
+                    # top right
+                    temp_particles[i - 1, j + 1] = particles[i, j] * 0.5
 
-            elif direction[i,j] == 1:
-                #top middle
-                try:
-                    temp_particles[i-1,j] = particles[i,j]*0.5
-                    i += 1
-                    j += 1
+                elif direction[i, j] == 3:
+                    # middle left
+                    temp_particles[i, j + 1] = particles[i, j] * 0.5
 
-                except:
-                    i += 1
-                    j += 1
+                elif direction[i, j] == 4:
+                    # middle middle
+                    temp_particles[i + 1, j + 1] = particles[i, j] * 0.5
 
+                elif direction[i, j] == 5:
+                    # middle right
+                    temp_particles[i + 1, j] = particles[i, j] * 0.5
 
+                elif direction[i, j] == 6:
+                    # bottom left
+                    temp_particles[i + 1, j - 1] = particles[i, j] * 0.5
 
-            elif direction[i,j] == 2:
-                #top right
-                try:
-                    temp_particles[i-1,j+1] = particles[i,j]*0.5
-                    i += 1
-                    j += 1
-
-                except:
-                    i += 1
-                    j += 1
+                elif direction[i, j] == 7:
+                    # bottom middle
+                    temp_particles[i, j - 1] = particles[i, j] * 0.5
 
 
 
-            elif direction[i,j] == 3:
-                #middle left
-                try:
-                    temp_particles[i,j+1] = particles[i,j]*0.5
-                    i += 1
-                    j += 1
-
-                except:
-                    i += 1
-                    j += 1
-
-
-
-            elif direction[i,j] == 4:
-                #middle middle
-                try:
-                    temp_particles[i+1,j+1] = particles[i,j]*0.5
-                    i += 1
-                    j += 1
-
-                except:
-                    i += 1
-                    j += 1
-
-
-
-            elif direction[i,j] == 5:
-                #middle right
-                try:
-                    temp_particles[i+1,j] = particles[i,j]*0.5
-                    i += 1
-                    j += 1
-
-                except:
-                    i += 1
-                    j += 1
-
-
-
-            elif direction[i,j] == 6:
-                #bottom left
-                try:
-                    temp_particles[i+1,j-1] = particles[i,j]*0.5
-                    i += 1
-                    j += 1
-
-                except:
-                    i += 1
-                    j += 1
-
-
-
-            elif direction[i,j] == 7:
-                #bottom middle
-                try:
-                    temp_particles[i,j-1] = particles[i,j]*0.5
-                    i += 1
-                    j += 1
-
-                except:
-                    i += 1
-                    j += 1
-
-
+            j += 1
+        i += 1
+    q += 1
     particles = temp_particles
+
     print(temp_particles)
     return particles
 
 def model(direction, particles,iterations, eruption):
-    ''' iterates over timesteps, works fine'''
-    q = 0
+    #''' iterates over timesteps, works fine'''
+    #q = 0
     for v in range(0, iterations):
         try:
             partTransport(direction, particles, eruption, q)
@@ -174,7 +111,11 @@ def model(direction, particles,iterations, eruption):
     return particles
 
 
+#print(w_direction)
+#print(particles)
+#print(eruption)
+#print(iterations)
 
+partTransport(w_direction, particles, eruption, iterations)
 
-model(w_direction, particles, iterations, eruption)
 #print(particles)
