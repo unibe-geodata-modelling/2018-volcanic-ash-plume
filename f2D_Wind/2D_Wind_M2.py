@@ -29,8 +29,6 @@ w_direction[6] = 3
 def partTransport(w_direction, particles, eruption, origin):
     ''' calculates transport of particles trough wind'''
 
-    i = 0
-    j = 0
     q = 0
 
     rows = int(np.shape(particles)[0])
@@ -41,27 +39,38 @@ def partTransport(w_direction, particles, eruption, origin):
 
     #start for-loop here to iterate
     for n in iterations:
+        i = 0
 
         #create temporary array to save calculated time step
         temp_arr = np.zeros((rows, cols))
 
         #dynamic particle generation at volcano
         particles[origin[0], origin[1]] = eruption[q]
+        print("..." * 10)
+        print("..." * 10)
         print("timestep {}, erupting {}".format(q+1, eruption[q]))
 
 
 
-        #start while loops here to do the calculations
+        #go through every pixel and evaluate its next time step, then save to temp_arr
+        while i < rows:
+            j = 0
+
+            while j < cols:
+                print("going trough pixel at {},{}".format(i, j))
 
 
 
+                j +=1
+
+            i += 1
 
 
-
-
-
+        #enabling iteration for the for loop
         q += 1
 
+        #saving temp_arr as the new particles for the next time-step
+        #particles = temp_arr
 
 
 
@@ -69,6 +78,7 @@ def partTransport(w_direction, particles, eruption, origin):
 
 
 
+    print(particles)
     return particles
 
 
