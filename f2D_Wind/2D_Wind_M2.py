@@ -14,12 +14,20 @@ eruption = [50000, 100000, 50000, 25000, 15000, 10000, 1000, 500, 250, 100]
 # placement of volcano
 origin = [5,5]
 #diffusion/fallout factor over time
+<<<<<<< HEAD
 loss = 1
 #--------------------------------------------------------------------------------------
 
 #Import actual wind-raster here
 w_direction = np.random.randint(low=0, high=8, size=(int(rastersize), int(rastersize)))
 
+=======
+loss = 0.25
+#--------------------------------------------------------------------------------------
+
+# setup
+w_direction = np.random.randint(low=0, high=8, size=(int(rastersize), int(rastersize)))
+>>>>>>> 2D_Wind
 particles = np.zeros((int(rastersize), int(rastersize)))
 iterations = range(0,int(iterate))
 
@@ -71,6 +79,7 @@ def partTransport(direction, particles, eruption, origin, loss):
                     elif direction[i, j] == 2:
                         # top right
                         temp_arr[i - 1, j + 1] = particles[i, j] * loss
+<<<<<<< HEAD
 
                     elif direction[i, j] == 3:
                         # middle left
@@ -80,6 +89,17 @@ def partTransport(direction, particles, eruption, origin, loss):
                         # middle middle
                         temp_arr[i + 1, j + 1] = particles[i, j] * loss
 
+=======
+
+                    elif direction[i, j] == 3:
+                        # middle left
+                        temp_arr[i, j + 1] = particles[i, j] * loss
+
+                    elif direction[i, j] == 4:
+                        # middle middle
+                        temp_arr[i + 1, j + 1] = particles[i, j] * loss
+
+>>>>>>> 2D_Wind
                     elif direction[i, j] == 5:
                         # middle right
                         temp_arr[i + 1, j] = particles[i, j] * loss
@@ -107,4 +127,12 @@ def partTransport(direction, particles, eruption, origin, loss):
     print(particles)
     return particles
 
+<<<<<<< HEAD
 plt.imshow(partTransport(w_direction, particles, eruption, origin, loss))
+=======
+
+
+
+plt.imshow(partTransport(w_direction, particles, eruption, origin, loss))
+
+>>>>>>> 2D_Wind
