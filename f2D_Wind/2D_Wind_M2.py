@@ -1,6 +1,5 @@
 import numpy as np
 from matplotlib import pyplot as plt
-import random
 
 
 #This feature tries to model 2D Wind distribution of ash particles
@@ -25,9 +24,11 @@ origin2 = [98,59]
 origin3 = [97,58]
 origin4 = [97,59]
 
-#diffusion/fallout factor over time
-loss = 0.89
+#fallout factor over time
+loss = 1
 
+#diffusion facter for each timestep
+diff_loss = 0.5
 
 #--------------------------------------------------------------------------------------
 #Import actual wind-raster here
@@ -43,7 +44,7 @@ w_direction = np.random.randint(low=0, high=4, size=(int(rastersize), int(raster
 particles = np.zeros((int(rastersize), int(rastersize)))
 iterations = range(0,int(iterate))
 
-def partTransport(direction, particles, eruption, origin, loss):
+def partTransport(direction, particles, eruption, origin, loss, diff_loss):
     ''' calculates transport of particles trough wind'''
 
     q = 0
@@ -82,35 +83,148 @@ def partTransport(direction, particles, eruption, origin, loss):
                     # new location of particles [depending on wind] = sum((old location[s] of particles) * loss)
                     if direction[i, j] == 0:
                         # top left
-                        temp_arr[i-1, j-1] += particles[i,j] * loss
+                        temp_arr[i-1, j-1] += particles[i,j] * loss * (1-diff_loss)
+
+                        #save indices to make further steps look more simple on paper
+                        z = i-1
+                        u = j-1
+
+                        #assign each surrounding pixel of end-of-timestep-target pixel the diffusion value
+                        temp_arr[z-1, u-1] += particles[i,j] * loss * diff_loss
+                        temp_arr[z-1, u] += particles[i,j] * loss * diff_loss
+                        temp_arr[z-1, u+1] += particles[i,j] * loss * diff_loss
+                        temp_arr[z, u+1] += particles[i,j] * loss * diff_loss
+                        temp_arr[z+1, u+1] += particles[i,j] * loss * diff_loss
+                        temp_arr[z+1, u] += particles[i,j] * loss * diff_loss
+                        temp_arr[z+1, u-1] += particles[i,j] * loss * diff_loss
+                        temp_arr[z, u-1] += particles[i,j] * loss * diff_loss
 
                     elif direction[i, j] == 1:
                         # top middle
-                        temp_arr[i - 1, j] += particles[i,j] * loss
+                        temp_arr[i - 1, j] += particles[i,j] * loss * (1-diff_loss)
+
+                        # save indices to make further steps look more simple on paper
+                        z = i - 1
+                        u = j
+
+                        # assign each surrounding pixel of end-of-timestep-target pixel the diffusion value
+                        temp_arr[z - 1, u - 1] += particles[i, j] * loss * diff_loss
+                        temp_arr[z - 1, u] += particles[i, j] * loss * diff_loss
+                        temp_arr[z - 1, u + 1] += particles[i, j] * loss * diff_loss
+                        temp_arr[z, u + 1] += particles[i, j] * loss * diff_loss
+                        temp_arr[z + 1, u + 1] += particles[i, j] * loss * diff_loss
+                        temp_arr[z + 1, u] += particles[i, j] * loss * diff_loss
+                        temp_arr[z + 1, u - 1] += particles[i, j] * loss * diff_loss
+                        temp_arr[z, u - 1] += particles[i, j] * loss * diff_loss
 
                     elif direction[i, j] == 2:
                         # top right
-                        temp_arr[i - 1, j + 1] += particles[i,j] * loss
+                        temp_arr[i - 1, j + 1] += particles[i,j] * loss * (1-diff_loss)
+
+                        # save indices to make further steps look more simple on paper
+                        z = i - 1
+                        u = j + 1
+
+                        # assign each surrounding pixel of end-of-timestep-target pixel the diffusion value
+                        temp_arr[z - 1, u - 1] += particles[i, j] * loss * diff_loss
+                        temp_arr[z - 1, u] += particles[i, j] * loss * diff_loss
+                        temp_arr[z - 1, u + 1] += particles[i, j] * loss * diff_loss
+                        temp_arr[z, u + 1] += particles[i, j] * loss * diff_loss
+                        temp_arr[z + 1, u + 1] += particles[i, j] * loss * diff_loss
+                        temp_arr[z + 1, u] += particles[i, j] * loss * diff_loss
+                        temp_arr[z + 1, u - 1] += particles[i, j] * loss * diff_loss
+                        temp_arr[z, u - 1] += particles[i, j] * loss * diff_loss
 
                     elif direction[i, j] == 3:
                         # middle right
-                        temp_arr[i, j + 1] += particles[i,j] * loss
+                        temp_arr[i, j + 1] += particles[i,j] * loss * (1-diff_loss)
+
+                        # save indices to make further steps look more simple on paper
+                        z = i
+                        u = j + 1
+
+                        # assign each surrounding pixel of end-of-timestep-target pixel the diffusion value
+                        temp_arr[z - 1, u - 1] += particles[i, j] * loss * diff_loss
+                        temp_arr[z - 1, u] += particles[i, j] * loss * diff_loss
+                        temp_arr[z - 1, u + 1] += particles[i, j] * loss * diff_loss
+                        temp_arr[z, u + 1] += particles[i, j] * loss * diff_loss
+                        temp_arr[z + 1, u + 1] += particles[i, j] * loss * diff_loss
+                        temp_arr[z + 1, u] += particles[i, j] * loss * diff_loss
+                        temp_arr[z + 1, u - 1] += particles[i, j] * loss * diff_loss
+                        temp_arr[z, u - 1] += particles[i, j] * loss * diff_loss
 
                     elif direction[i, j] == 4:
                         # bottom right
-                        temp_arr[i + 1, j + 1] += particles[i,j] * loss
+                        temp_arr[i + 1, j + 1] += particles[i,j] * loss * (1-diff_loss)
+
+                        # save indices to make further steps look more simple on paper
+                        z = i + 1
+                        u = j + 1
+
+                        # assign each surrounding pixel of end-of-timestep-target pixel the diffusion value
+                        temp_arr[z - 1, u - 1] += particles[i, j] * loss * diff_loss
+                        temp_arr[z - 1, u] += particles[i, j] * loss * diff_loss
+                        temp_arr[z - 1, u + 1] += particles[i, j] * loss * diff_loss
+                        temp_arr[z, u + 1] += particles[i, j] * loss * diff_loss
+                        temp_arr[z + 1, u + 1] += particles[i, j] * loss * diff_loss
+                        temp_arr[z + 1, u] += particles[i, j] * loss * diff_loss
+                        temp_arr[z + 1, u - 1] += particles[i, j] * loss * diff_loss
+                        temp_arr[z, u - 1] += particles[i, j] * loss * diff_loss
 
                     elif direction[i, j] == 5:
                         # bottom middle
-                        temp_arr[i + 1, j] += particles[i,j] * loss
+                        temp_arr[i + 1, j] += particles[i,j] * loss * (1-diff_loss)
+
+                        # save indices to make further steps look more simple on paper
+                        z = i + 1
+                        u = j
+
+                        # assign each surrounding pixel of end-of-timestep-target pixel the diffusion value
+                        temp_arr[z - 1, u - 1] += particles[i, j] * loss * diff_loss
+                        temp_arr[z - 1, u] += particles[i, j] * loss * diff_loss
+                        temp_arr[z - 1, u + 1] += particles[i, j] * loss * diff_loss
+                        temp_arr[z, u + 1] += particles[i, j] * loss * diff_loss
+                        temp_arr[z + 1, u + 1] += particles[i, j] * loss * diff_loss
+                        temp_arr[z + 1, u] += particles[i, j] * loss * diff_loss
+                        temp_arr[z + 1, u - 1] += particles[i, j] * loss * diff_loss
+                        temp_arr[z, u - 1] += particles[i, j] * loss * diff_loss
 
                     elif direction[i, j] == 6:
                         # bottom left
-                        temp_arr[i + 1, j - 1] += particles[i,j] * loss
+                        temp_arr[i + 1, j - 1] += particles[i,j] * loss * (1-diff_loss)
+
+                        # save indices to make further steps look more simple on paper
+                        z = i + 1
+                        u = j - 1
+
+                        # assign each surrounding pixel of end-of-timestep-target pixel the diffusion value
+                        temp_arr[z - 1, u - 1] += particles[i, j] * loss * diff_loss
+                        temp_arr[z - 1, u] += particles[i, j] * loss * diff_loss
+                        temp_arr[z - 1, u + 1] += particles[i, j] * loss * diff_loss
+                        temp_arr[z, u + 1] += particles[i, j] * loss * diff_loss
+                        temp_arr[z + 1, u + 1] += particles[i, j] * loss * diff_loss
+                        temp_arr[z + 1, u] += particles[i, j] * loss * diff_loss
+                        temp_arr[z + 1, u - 1] += particles[i, j] * loss * diff_loss
+                        temp_arr[z, u - 1] += particles[i, j] * loss * diff_loss
 
                     elif direction[i, j] == 7:
                         # middle left
-                        temp_arr[i, j - 1] += particles[i,j] * loss
+                        temp_arr[i, j - 1] += particles[i,j] * loss * (1-diff_loss)
+
+                        # save indices to make further steps look more simple on paper
+                        z = i
+                        u = j - 1
+
+                        # assign each surrounding pixel of end-of-timestep-target pixel the diffusion value
+                        temp_arr[z - 1, u - 1] += particles[i, j] * loss * diff_loss
+                        temp_arr[z - 1, u] += particles[i, j] * loss * diff_loss
+                        temp_arr[z - 1, u + 1] += particles[i, j] * loss * diff_loss
+                        temp_arr[z, u + 1] += particles[i, j] * loss * diff_loss
+                        temp_arr[z + 1, u + 1] += particles[i, j] * loss * diff_loss
+                        temp_arr[z + 1, u] += particles[i, j] * loss * diff_loss
+                        temp_arr[z + 1, u - 1] += particles[i, j] * loss * diff_loss
+                        temp_arr[z, u - 1] += particles[i, j] * loss * diff_loss
+
 
                 except IndexError:
                     pass
@@ -134,4 +248,4 @@ def partTransport(direction, particles, eruption, origin, loss):
     plt.imsave("Wind_Direction\Wind_Direction", w_direction)
     return np.rint(particles)
 
-partTransport(w_direction, particles, eruption, origin, loss)
+partTransport(w_direction, particles, eruption, origin, loss, diff_loss)
