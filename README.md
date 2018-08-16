@@ -1,4 +1,4 @@
-## 2018-volcanic-ash-plume
+*2018-volcanic-ash-plume*
 
 # Modelling Eyjafjallajökull Volcanic Ash Plume of 2010
 
