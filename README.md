@@ -1,6 +1,6 @@
 ## 2018-volcanic-ash-plume
 
-# Modelling Eyjafjallajökull Volcanic Eruption of 2010
+# Modelling Eyjafjallajökull Volcanic Ash Plume of 2010
 
 Authors:
 
