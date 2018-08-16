@@ -19,11 +19,8 @@ asd
 
 **Modes**
 
-<<<<<<< Updated upstream
 Our Model can be used in two different modes. There is a manual mode, where the user can input specific 
-=======
-Our Model can be used in two different modes. There is a manual mode, where the user can input specific
->>>>>>> Stashed changes
+
 
 ---
 ## Input Parameters:
@@ -32,7 +29,6 @@ We used the following input parameters in our model:
 
 + **Wind Data**
 
-<<<<<<< Updated upstream
    Wind Data is fed into our model in raster format and taken from [here].(insert link here!)  
    We used two seperate Inputs, one for lat(u)-winds and one for lng(v)-winds.  
    
@@ -63,9 +59,6 @@ We used the following input parameters in our model:
 
    asdfasdf.  
    asdfasdf.  
-=======
-   Wind Data is fed into our model in raster format and taken from [here].(insert link here!)
-   We used two seperate Inputs, one for lat(u)-winds and one for lng(v)-winds.
 
 
 + **Time**
@@ -94,7 +87,6 @@ We used the following input parameters in our model:
 
    asdfasdf.
    asdfasdf.
->>>>>>> Stashed changes
 
 ---
 ## What our Model does:
@@ -110,11 +102,8 @@ asdf
 
 
 ---
-<<<<<<< Updated upstream
 ## Aknowledgements 
-=======
-## Aknowledgements
->>>>>>> Stashed changes
+
 
 
 
