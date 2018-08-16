@@ -30,7 +30,7 @@ We used the following input parameters in our model:
 
 + **Wind Data**
 
-   Wind Data is fed into our model in raster format and taken from [here].(insert link here!)  
+   Wind Data is fed into our model in raster format and taken from [here](insert link here!).  
    We used two seperate Inputs, one for lat(u)-winds and one for lng(v)-winds.  
 
 
