@@ -89,7 +89,7 @@ The first iteration (put into words) would look something like this:
 In order to check, based on wind direction, which cell needs to recieve the output of each calculation, we followed the same principle used in the ArcGIS Tool [_Flow Accumulation_](http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/how-flow-direction-works.htm). This tool assigns each of the neighbouring 8 cells an individual value, where each value represents a direction:
 
 
-![alt_text](linkhere)
+![alt_text](https://github.com/unibe-geodata-modelling/2018-volcanic-ash-plume/blob/master/mediaResources/readme_resources/flow_acc.JPG)
 
 
 In our case, we assigned each neighbouring cell a value between 0 and 7, starting from cell (x-1,y-1) with value 0 and then continuing to add 1 in a clockwise motion.
