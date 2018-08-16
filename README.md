@@ -23,6 +23,8 @@ Our Model can be used in two different modes. There is a manual mode, where the 
 
 
 ---
+
+
 ## Input Parameters:
 We used the following input parameters in our model:
 
@@ -89,19 +91,42 @@ We used the following input parameters in our model:
    asdfasdf.
 
 ---
+
+
 ## What our Model does:
 asdf
 
 ---
+
+
 ## Results we got:
-asdf
+**Development Phase 1**
+In development phase 1 we tried to implement basic ash dispersion in a 2D environment with constant wind speeds. 
+Afterwards, the only factors reducing the amount of ash in the air were our fallout constant as well as to some degree our 
+diffusion constant (which only really thinned out ash pockets, not really leading to reduced amout of ash in the 'atmosphere')
+
+
+Here are a few of our earliest results:
+
+![alt text](https://github.com/unibe-geodata-modelling/2018-volcanic-ash-plume/blob/master/mediaResources/testruns_GIFs/test.gif)
+
+![alt text](https://github.com/unibe-geodata-modelling/2018-volcanic-ash-plume/blob/master/mediaResources/testruns_GIFs/test_2.gif)
+
+![alt text](https://github.com/unibe-geodata-modelling/2018-volcanic-ash-plume/blob/master/mediaResources/testruns_GIFs/test_3.gif)
+
+![alt_text](https://github.com/unibe-geodata-modelling/2018-volcanic-ash-plume/blob/master/mediaResources/testruns_GIFs/Ashplume2.gif)
+
 
 ---
+
+
 ## Known Limitations of our Model:
 asdf
 
 
 ---
+
+
 ## Aknowledgements
 
 
