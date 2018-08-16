@@ -3,8 +3,8 @@
 # Modelling Eyjafjallajökull Volcanic Eruption of 2010
 
 Authors:
-_Christoph von Matt, matr.n, uni-email_ \n
-_Benjamin Schuepbach, 14-100-564, benjamin.schuepbach@students.unibe.ch_
+Christoph von Matt, matr.n, uni-email
+Benjamin Schuepbach, 14-100-564, benjamin.schuepbach@students.unibe.ch
 
 
 ## About our Model:
