@@ -32,12 +32,14 @@ We used the following input parameters in our model:
 + **Wind Data**
 
    Wind Data is fed into our model in raster format and taken from [here].(insert link here!)
+   
    We used two seperate Inputs, one for lat(u)-winds and one for lng(v)-winds.
 
 
 + **Time**
 
    Time is defined as steps, which in turn represent iterations. Each step represents 6 hours and one model iteration.
+   
    This was derived from how often atmospheric winds are measured, which is in 6-hour intervalls.
 
 
@@ -49,23 +51,27 @@ We used the following input parameters in our model:
 + **Location of Volcano**
 
    The location of a volcano can be entered here.
+   
    This parameters takes coordinates in the lng/lat format (in decimal degrees).
 
 
 + **Ash Plume height**
 
    asdfasdf.
+   
    asdfasdf.
 
 + **Mass- and Volume Rates & Ash Fraction**
 
    asdfasdf.
+   
    asdfasdf.
 
 
 + **Time**
 
    Time is defined as steps, which in turn represent iterations. Each step represents 6 hours and one model iteration.
+   
    This was derived from how often atmospheric winds are measured, which is in 6-hour intervalls.
 
 
@@ -77,6 +83,7 @@ We used the following input parameters in our model:
 + **Location of Volcano**
 
    The location of a volcano can be entered here.
+   
    This parameters takes coordinates in the lng/lat format (in decimal degrees).
 
 
@@ -100,6 +107,8 @@ asdf
 
 
 ## Results we got:
+
+
 **Development Phase 1**
 In development phase 1 we tried to implement basic ash dispersion in a 2D environment with constant wind speeds. 
 Afterwards, the only factors reducing the amount of ash in the air were our fallout constant as well as to some degree our 
