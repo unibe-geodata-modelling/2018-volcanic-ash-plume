@@ -9,11 +9,13 @@ _Christoph von Matt, matr.n, uni-email_
 _Benjamin Schuepbach, 14-100-564, benjamin.schuepbach@students.unibe.ch_
 
 
-## About our Model:
+
+
+### About our Model:
 
 asd
 
-### How to use this Model:
+#### How to use this Model:
 
 **Testing and Simulation**
 
@@ -31,71 +33,64 @@ We used the following input parameters in our model:
 
 + **Wind Data**
 
-   Wind Data is fed into our model in raster format and taken from [here].(insert link here!)
-   
-   We used two seperate Inputs, one for lat(u)-winds and one for lng(v)-winds.
+   Wind Data is fed into our model in raster format and taken from [here].(insert link here!)  
+   We used two seperate Inputs, one for lat(u)-winds and one for lng(v)-winds.  
 
 
 + **Time**
 
-   Time is defined as steps, which in turn represent iterations. Each step represents 6 hours and one model iteration.
-   
-   This was derived from how often atmospheric winds are measured, which is in 6-hour intervalls.
+   Time is defined as steps, which in turn represent iterations. Each step represents 6 hours and one model iteration.  
+   This was derived from how often atmospheric winds are measured, which is in 6-hour intervalls.  
 
 
 + **Resolution**
 
-   With this parameter, the pixel-resolution (in km units) of our model can be changed.
+   With this parameter, the pixel-resolution (in km units) of our model can be changed.  
 
 
 + **Location of Volcano**
 
-   The location of a volcano can be entered here.
-   
-   This parameters takes coordinates in the lng/lat format (in decimal degrees).
+   The location of a volcano can be entered here.  
+   This parameters takes coordinates in the lng/lat format (in decimal degrees).  
 
 
 + **Ash Plume height**
 
-   asdfasdf.
-   
-   asdfasdf.
+   asdfasdf.  
+   asdfasdf.  
 
 + **Mass- and Volume Rates & Ash Fraction**
 
-   asdfasdf.
-   
-   asdfasdf.
+   asdfasdf.  
+   asdfasdf.  
 
 
 + **Time**
 
-   Time is defined as steps, which in turn represent iterations. Each step represents 6 hours and one model iteration.
-   
-   This was derived from how often atmospheric winds are measured, which is in 6-hour intervalls.
+   Time is defined as steps, which in turn represent iterations. Each step represents 6 hours and one model iteration.  
+   This was derived from how often atmospheric winds are measured, which is in 6-hour intervalls.  
 
 
 + **Resolution**
 
-   With this parameter, the pixel-resolution (in km units) of our model can be changed.
+   With this parameter, the pixel-resolution (in km units) of our model can be changed.  
 
 
 + **Location of Volcano**
 
-   The location of a volcano can be entered here.
-   
-   This parameters takes coordinates in the lng/lat format (in decimal degrees).
+   The location of a volcano can be entered here.  
+   This parameters takes coordinates in the lng/lat format (in decimal degrees).  
 
 
 + **Ash Plume height**
 
-   asdfasdf.
-   asdfasdf.
+   asdfasdf.  
+   asdfasdf.  
 
 + **Mass- and Volume Rates & Ash Fraction**
 
-   asdfasdf.
-   asdfasdf.
+   asdfasdf.  
+   asdfasdf.  
 
 ---
 
@@ -110,6 +105,8 @@ asdf
 
 
 **Development Phase 1**
+
+
 In development phase 1 we tried to implement basic ash dispersion in a 2D environment with constant wind speeds. 
 Afterwards, the only factors reducing the amount of ash in the air were our fallout constant as well as to some degree our 
 diffusion constant (which only really thinned out ash pockets, not really leading to reduced amout of ash in the 'atmosphere')
