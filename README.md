@@ -11,17 +11,14 @@ _Benjamin Schuepbach, 14-100-564, benjamin.schuepbach@students.unibe.ch_
 
 
 
-### About our Model:
+#### About our Model
 
-asd
+This project is our homework submission for the seminar  _438745-FS2018-0- Geodatenanalyse und Modellierung_ at the University of Bern in Switzerland. We intended to create a python model of [the ash plume dispersion after the eruption of Eyjafjallajökull in 2010](https://en.wikipedia.org/wiki/2010_eruptions_of_Eyjafjallaj%C3%B6kull).
 
-#### How to use this Model:
 
-**Testing and Simulation**
+**Testing & Simulation Modes**
 
-**Modes**
-
-Our Model can be used in two different modes. There is a manual mode, where the user can input specific
+Our Model has different modes. There is a manual mode, where the user can input their own input parameters. There is also a simulation mode, where predefined input parameters (representing the Eyjafjallajökull eruption of 2010) are used.
 
 
 ---
@@ -65,46 +62,19 @@ We used the following input parameters in our model:
    asdfasdf.  
 
 
-+ **Time**
-
-   Time is defined as steps, which in turn represent iterations. Each step represents 6 hours and one model iteration.  
-   This was derived from how often atmospheric winds are measured, which is in 6-hour intervalls.  
-
-
-+ **Resolution**
-
-   With this parameter, the pixel-resolution (in km units) of our model can be changed.  
-
-
-+ **Location of Volcano**
-
-   The location of a volcano can be entered here.  
-   This parameters takes coordinates in the lng/lat format (in decimal degrees).  
-
-
-+ **Ash Plume height**
-
-   asdfasdf.  
-   asdfasdf.  
-
-+ **Mass- and Volume Rates & Ash Fraction**
-
-   asdfasdf.  
-   asdfasdf.  
-
 ---
 
 
-## What our Model does:
+## What our Model does (How to Volcano)
 asdf
 
 ---
 
 
-## Results we got:
+## Results we got
 
 
-**Development Phase 1**
+### Development Phase 1
 
 
 In development phase 1 we tried to implement basic ash dispersion in a 2D environment with constant wind speeds. 
@@ -122,10 +92,15 @@ Here are a few of our earliest results:
 ![alt_text](https://github.com/unibe-geodata-modelling/2018-volcanic-ash-plume/blob/master/mediaResources/testruns_GIFs/Ashplume2.gif "Ash plume with implemented diffusion- and fallout coefficients")
 
 
+### Development Phase 2
+
+
+In development phase 2 additional functionality such as different modes was added. At this stage we tried to implement the use of actual wind data and coordinates from the 2010 eruption. With the decision to go back to Anaconda Python 2.7 we could also have the result displayed on a basemap.
+
 ---
 
 
-## Known Limitations of our Model:
+## Known Limitations of our Model
 asdf
 
 
