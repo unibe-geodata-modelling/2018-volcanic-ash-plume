@@ -66,7 +66,47 @@ We used the following input parameters in our model:
 
 
 ## What our Model does (How to Volcano)
-asdf
+As mentioned before, our model only takes raster data or constants as inputs. It is then built around reading and manipulating these rasters:
+
++ Wind Rasters
+   See above
+   
+   
++ Ash Concentration Raster
+   See above
+   
+   
++ Cache Raster (temp_arr)
+
+   The Cache Raster is a temporary numpy array used to save calculated values during iterations. This is necessary because one cannot simply overrite the ash concentration raster, due to the possibility of later needing the original value of a cell. For example: If wind were constant and one-directional, if one were to overwrite the value of the cell where particles would move to, one could not calculate values of cells after that one. In order to avoid this problem, we temporarily save the calculated values to a new raster.
+
+
+The first iteration (put into words) would look something like this:
+
++ Read cell with index (0,0) of both wind rasters
++ Read cell with index (0,0) of the ash concentration raster
+
+In order to check, based on wind direction, which cell needs to recieve the output of each calculation, we followed the same principle used in the ArcGIS Tool [_Flow Accumulation_](http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/how-flow-direction-works.htm). This tool assigns each of the neighbouring 8 cells an individual value, where each value represents a direction:
+
+
+![alt_text](linkhere)
+
+
+In our case, we assigned each neighbouring cell a value between 0 and 7, starting from cell (x-1,y-1) with value 0 and then continuing to add 1 in a clockwise motion.
+
+
++ Once wind direction is figured out, we calculate the percentage of the value in our ash concentration raster that should be
+transported. This is dependent mostly on wind speed, diffusion as well as a constant fallout coefficient. We iterate over each cell
+of all rasters like this, all the while saving the calculated values to our cache array. Calculation of all cells in the cache array
+marks the end of one iteration of the main loop. At the end of each such iteration, the ash concentration raster will be overwritten
+by the cache array. 
+
++ In order to simulate an eruption, cells at the pre-specified coordinates of the volcano are set to recieve an eruption value at each 
+timestep, introducing ash into the system. These values are stored in a list.
+
+
+Finally, our model outputs a fully drawn map for each iteration of the main loop. This is so in the end, results using this model can easily be displayed as a GIF file.
+
 
 ---
 
@@ -100,8 +140,10 @@ In development phase 2 additional functionality such as different modes was adde
 ---
 
 
-## Known Limitations of our Model
-asdf
+## Known Limitations // Bugs of our Model
++ OutOfBounds Error
+
++asf
 
 
 ---
