@@ -69,10 +69,12 @@ We used the following input parameters in our model:
 As mentioned before, our model only takes raster data or constants as inputs. It is then built around reading and manipulating these rasters:
 
 + Wind Rasters
+   
    See above
    
    
 + Ash Concentration Raster
+   
    See above
    
    
@@ -92,7 +94,7 @@ In order to check, based on wind direction, which cell needs to recieve the outp
 ![alt_text](https://github.com/unibe-geodata-modelling/2018-volcanic-ash-plume/blob/master/mediaResources/readme_resources/flow_acc.JPG)
 
 
-In our case, we assigned each neighbouring cell a value between 0 and 7, starting from cell (x-1,y-1) with value 0 and then continuing to add 1 in a clockwise motion.
+In our case, we assigned each neighbouring cell a value between 0 and 7, starting from cell (x-1,y-1) with value 0 and then continuing to add 1 in a clockwise motion. Winds that go straight North would therefore have a value of 1 assigned in a particular cell.
 
 
 + Once wind direction is figured out, we calculate the percentage of the value in our ash concentration raster that should be
