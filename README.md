@@ -417,7 +417,7 @@ This figure shows a version of Figure 1 with limited extent. Here default extent
 With this figures we try to give an impression of how the individual components (transport, all directions diffusion,
 gradient-dependent diffusion) work.
 
-<img src="https://github.com/unibe-geodata-modelling/2018-volcanic-ash-plume/blob/Figures/WorldMap_096.png" width="900" height="500">
+<img src="https://github.com/unibe-geodata-modelling/2018-volcanic-ash-plume/blob/Figures/transport.gif" width="900" height="500">
 Figure 7: Europe Zoom: Only Transport.
   <br>
   <br>
