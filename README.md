@@ -15,7 +15,7 @@ _Benjamin Schuepbach, 14-100-564, benjamin.schuepbach@students.unibe.ch_
 
 This project is our homework submission for the seminar  _438745-FS2018-0- Geodata analysis and modeling_ at the University of Bern in Switzerland. We built a model of [the ash plume dispersion after the eruption of Eyjafjallajökull in 2010](https://en.wikipedia.org/wiki/2010_eruptions_of_Eyjafjallaj%C3%B6kull).
 
-To build our model we worked with Python v.2.7.0 within a Conda Environment.
+To build our model we worked with Python v2.7.0 by using a Conda Environment.
 
 The model dynamics is inspired by the many different particle-transport-models that exist and which often base on the advection-diffusion equation (as described in e.g. _Folch 2012_).
 We decided however to implement simplified transport-diffusion dynamics.
@@ -48,12 +48,16 @@ _Attention: The only supported data format is the NetCDF-format!_
 
 The **Manual** mode allows the complete specification of all parameters needed to calculate the erupted ash concentration.
 This includes the _geographic location_ of the volcano, the _plume height_, the _durance_ of the eruption, the _mass fraction_
-of the particles (<63 micrometers), as well as _mass_ and _volume rates_. This results in one single concentration value which
+of the particles (<63 micrometers), as well as tephra _mass_ and tephra _volume rates_. This results in one single concentration value which
 is erupted for the specified durance. Again, this mode is primarily for testing purposes.
 
 In the **Eyjafjallakökull** mode the erupted ash concentration is calculated with predefined values for all needed parameters.
-We therefore use literature based values for the Eyjafjallajökull eruption event back in 2010.
+We therefore use literature based values for the Eyjafjallajökull eruption event back in 2010. The result is an available eruption concentration sequence of 156 values (6-hourly-resolution) starting from the 14th April 2010 until the 22th May 2010.
 
+We obtained the Eyjafjallajökull 2010 concentration by using the following literature:
+
+- Plume height, eruption durance, (tephra) mass rate, (tephra) volume rate  &rarr; (*Gudmundsson et al. 2012*)
+- Ash mass fraction &rarr; (*Mastin et al. 2009*)
 
 ---
 
