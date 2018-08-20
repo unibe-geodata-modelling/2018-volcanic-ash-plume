@@ -137,7 +137,7 @@ Needed Parameters are:
           
           The *diffusion coefficient* was calculated according to a Gaussian plume model and was calculated as follows
           (assuming a neutrally stable atmosphere): <br>
-          <br>**Diffusion coefficient = 68 x resolution^0.894  &rarr; (*Cimbala 2018*)**
+          <br>**Diffusion coefficient = 68 x resolution^0.894**  &rarr; (*Cimbala 2018*)
           
      * Diffusion Percentage
           
@@ -163,14 +163,27 @@ Needed Parameters are:
      The *ash plume height* specifies the height of the erupted ash cloud in kilometers.
      
      As already declared above, in the **Manual** mode the user can specify the ash plume height, while in the
-     **Eyjafjallajökull** mode predefined values are used.
+     **Eyjafjallajökull** mode predefined values (according to *Gudmundsson et al. 2012*) are used.
 
    
-
-+ **Mass- and Volume Rates & Ash Fraction**
-
-   asdfasdf.  
-   asdfasdf.  
++  **Mass- and Volume Rates**
+     
+     The *mass-* and *volume rates* specify the erupted rates of tephra mass (in g/m^3) and tephra volume (in m^3/s).
+     
+     As with the plume height, the user can specify the mass- and volume rates manually in the **Manual** mode while 
+     predefined values are used in the **Eyjafjallajökull** mode (according to *Gudmundsson et al. 2012*).
+     
++ **Ash Mass Fraction**
+     
+     The *mass fraction* defines the percentage of particles smaller than 63 micrometers.<br>
+     
+     The erupted tephra mass is multiplied by this factor to obtain only the fine ash fraction, which potentially
+     can be transported over large distances.
+     
+     In the **Manual** mode the user can specify the mass fraction value arbitrary between 0 and 1.
+     
+     In the **Eyjafjallakökull** mode the ash mass fraction is predefined as **0.5** (according to *Mastin et al. 2009*).
+     
 
 
 ---
