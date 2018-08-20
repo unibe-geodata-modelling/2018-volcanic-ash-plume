@@ -406,10 +406,17 @@ The parameters for this model run are specified on the plot.
 
 
 ## Known Limitations // Bugs of our Model
-+ OutOfBounds Error
+
+We are fully aware that our model has several limitations and issues which are not solved yet. They shall be discussed in
+this section.
+
 
 +asf
+---
+## Thanks
 
+Thanks go to our instructors and supervisors during the semester, *Dr. Andreas Zischg (University of Bern)*, *Dr. Jorge Ramirez
+(University of Bern)* and *Dr. Pascal Horton (University of Bern)* for their strong commitment to make the "Geodata analysis and modeling" lecture in its first realisation a full success. Thanks for the very informative and interesting lecture!
 
 ---
 
@@ -435,7 +442,7 @@ Mastin, L.G., Guffanti, M., Servranckx, R., Webley, P., Barsotti, S., Dean, K., 
               Waythomas, C.F. (2009): A multidisciplinary effort to assign realistic source parameters to models of
               volcanic ash-cloud transport and dispersion during eruptions.
               In: Journal of Volcanology and Geothermal Research 186: 10-21.
-              DOI: 10.1016/j.jvolgeores.2009.01.008
+              [DOI: 10.1016/j.jvolgeores.2009.01.008](https://www.sciencedirect.com/science/article/pii/S0377027309000146).
 
 
 
