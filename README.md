@@ -418,7 +418,18 @@ With this figures we try to give an impression of how the individual components 
 gradient-dependent diffusion) work.
 
 <img src="https://github.com/unibe-geodata-modelling/2018-volcanic-ash-plume/blob/Figures/transport.gif" width="900" height="500">
-Figure 7: Europe Zoom: Only Transport.
+Figure 7: Europe Zoom: only Transport.
+  <br>
+  <br>
+  
+  
+<img src="https://github.com/unibe-geodata-modelling/2018-volcanic-ash-plume/blob/Figures/all%20directions.gif" width="900" height="500">
+Figure 8: Europe Zoom: only Diffusion, Diffusion-Type: All Directions.
+  <br>
+  <br>
+  
+<img src="https://github.com/unibe-geodata-modelling/2018-volcanic-ash-plume/blob/Figures/all%20directions.gif" width="900" height="500">
+Figure 9: Europe Zoom: only Diffusion, Diffusion-Type: All Directions.
   <br>
   <br>
 
