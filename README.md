@@ -308,14 +308,52 @@ Figure 2: Wind field with constant wind speeds (25 m/s).<br>
   **3.1) Diffusion in all directions**
   
   In this diffusion type the *diffusion concentration amount* is equally distributed to all 8 surrounding cells. Each cell
-  receives therefore an ash concentration of **diffusion amount / 8** (*see Figure 4*). <br>
+  receives therefore an ash concentration of **diffusion concentration amount / 8** (*see Figure 4*). <br>
    
 <img src="https://github.com/unibe-geodata-modelling/2018-volcanic-ash-plume/blob/Figures/Diff_all.png" width="350" height="325">
-  Figure 3: Diffusion-Type: All directions.
+  Figure 4: Diffusion-Type: All directions.
   <br>
   <br>
-
-
+  
+  **3.2) Gradient-dependent diffusion**
+  
+  The second diffusion type is slightly more complex.
+  
+  As a first step, the concentrations of all surrounding cells are retrieved. Then the 
+  **difference with respect to the Cell *i* , *j*** is
+  calculated. Then, these differences are divided by the distance separating each cell from the Cell *i* *j*.<br>
+  This is done with the *spatial model resolution*. The differences then become **gradients**.
+  
+  An example calculation for Cell 3 looks like:
+  <br>
+  **gradient = (concentration Cell 3 - concentration Cell *i*, *j* ) / 80 km**
+  <br>
+  
+  *Note: The diagonally situated cells 2, 4, 6, 8 require a corrected distance. This is realized using simple trigonometry.*
+  
+  In the next step the available ash concentration for diffusion is **equally distributed to the cells showing a negative
+  gradient** with respect to Cell *i* , *j* (*see Figure 5*).
+  
+  Thus each receiving cell gets the following concentration:
+  
+  **diffusion concentration amount / Number of cells with negative gradient**.
+  
+  With this diffusion type, the diffusion distributes the *diffusion concentration amount* only towards lower ash
+  concentrations.
+  
+  <img src="https://github.com/unibe-geodata-modelling/2018-volcanic-ash-plume/blob/Figures/Diff_grad.png" width="400" height="300">
+  Figure 5: Diffusion-Type: Gradient-dependent.
+  <br>
+  <br>
+  
+ **4) Particle Fall-out**
+ 
+   As last step, before the whole transport diffusion loop starts all over again, the particle fall-out takes place.
+   
+   To model the particle fall out, the initially specified **fall-out percentage** is applied over the whole 
+   **particle concentration raster**. Every cell of this raster looses the same percentage of ash concentration with each
+   timestep. Thus, cells with higher concentrations lose a proportionally higher amount of ash particles.
+  
 
 Finally, our model outputs three fully drawn maps for each iteration of the transport and diffusion loop. So in the end, 
 the model results can easily be displayed as a GIF file.
@@ -324,7 +362,14 @@ the model results can easily be displayed as a GIF file.
 ---
 
 
-## Results we got
+### What our Model does (How to Volcano)
+
+
+
+---
+
+
+## Results
 
 
 ### Development Phase 1
