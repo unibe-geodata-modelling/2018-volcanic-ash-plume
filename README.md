@@ -284,7 +284,8 @@ Figure 2: Wind field with constant wind speeds (25 m/s).<br>
   
   After the particle transport mechanism has been completed, the diffusion part begins.
   
-  Our model provides two different diffusion mechanisms. The amount of ash concentration which is diffused, depends
+  Our model provides two different diffusion types: one in all directions and a gradient-dependent one. 
+  The amount of ash concentration which is diffused, depends
   on the initially defined *diffusion percentage*.
   
   Continuing the above example, the Cell *i* , *j* contains now the ash concentration of the diffusion part (which was not
@@ -297,12 +298,16 @@ Figure 2: Wind field with constant wind speeds (25 m/s).<br>
   
   **current concentration =** (remaining) **diffusion concentration amount + transported concentration** (in this cell).
   
-  Let's now look at the different diffusion mechanisms!
+  Before diffusion can take place - just like in the transport mechanism - the *diffusion concentration amount* has to be
+  specified again. The available ash concentration for diffusion is therefore **current concentration * diffusion percentage**.
   
+  Let's now look at the different diffusion types!
+  <br>
+  <br>
   
+  **3.1) Diffusion in all directions**
   
-  **Diffusion in all directions**
-  
+  In this diffusion type the 
   
   <img src="https://github.com/unibe-geodata-modelling/2018-volcanic-ash-plume/blob/Figures/Diff_all.png" width="350" height="325">
   Figure 3: Particle transport according to wind field in Figure 2.
