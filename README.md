@@ -353,7 +353,8 @@ Figure 2: Wind field with constant wind speeds (25 m/s).<br>
    To model the particle fall out, the initially specified **fall-out percentage** is applied over the whole 
    **particle concentration raster**. Every cell of this raster looses the same percentage of ash concentration with each
    timestep. Thus, cells with higher concentrations lose a proportionally higher amount of ash particles.
-  
+  <br>
+  <br>
 
 Finally, our model outputs three fully drawn maps for each iteration of the transport and diffusion loop. So in the end, 
 the model results can easily be displayed as a GIF file.
