@@ -62,11 +62,11 @@ We obtained the Eyjafjallajökull 2010 concentration by using the following lite
 ---
 
 
-### Input Parameters:
+### Input Parameters / Model Components:
 In the following all needed input parameters are listed and shortly explained. Depending on the chosen model settings
 the user may be prompted to provide input values.
 
-Needed Parameters are:
+The parameters and components are:
 
 
 
@@ -173,9 +173,9 @@ Needed Parameters are:
      As with the plume height, the user can specify the mass- and volume rates manually in the **Manual** mode while 
      predefined values are used in the **Eyjafjallajökull** mode (according to *Gudmundsson et al. 2012*).
      
-+ **Ash Mass Fraction**
++ **Ash Fraction**
      
-     The *mass fraction* defines the percentage of particles smaller than 63 micrometers.<br>
+     The *ash fraction* defines the percentage of particles smaller than 63 micrometers.<br>
      
      The erupted tephra mass is multiplied by this factor to obtain only the fine ash fraction, which potentially
      can be transported over large distances.
@@ -184,7 +184,12 @@ Needed Parameters are:
      
      In the **Eyjafjallakökull** mode the ash mass fraction is predefined as **0.5** (according to *Mastin et al. 2009*).
      
-
++ **Ash Concentration**
+     
+     The erupted *ash concentration* is calculated as follows:
+     
+     **concentration = mass rate * ash fraction / volume rate / resolution^2**
+     
 
 ---
 
