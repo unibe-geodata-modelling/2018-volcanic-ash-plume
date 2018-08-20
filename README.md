@@ -11,13 +11,13 @@ _Benjamin Schuepbach, 14-100-564, benjamin.schuepbach@students.unibe.ch_
 
 
 
-#### About our Model
+### About our Model
 
 This project is our homework submission for the seminar  _438745-FS2018-0- Geodata analysis and modeling_ at the University of Bern in Switzerland. We built a model of [the ash plume dispersion after the eruption of Eyjafjallajökull in 2010](https://en.wikipedia.org/wiki/2010_eruptions_of_Eyjafjallaj%C3%B6kull).
 
 To build our model we worked with Python v.2.7.0 within a Conda Environment.
 
-The model dynamics is inspired by the many different particle-transport-models that exist and which often base on the advection-diffusion equation (as described in e.g. Folch 2012).
+The model dynamics is inspired by the many different particle-transport-models that exist and which often base on the advection-diffusion equation (as described in e.g. _Folch 2012_).
 We decided however to implement simplified transport-diffusion dynamics.
 The transport of the particles is determined by wind direction and wind speed.
 Therefore, we classified the surrounding cells according to the wind-direction.
@@ -26,9 +26,19 @@ Depending on the wind speed, different percentages of the cells concentration ar
 For further information on the transport and diffusion process, please consider the explanations below.
 
 
-**Testing & Simulation Modes**
+### Model Settings
 
-Our Model has different modes. There is a manual mode, where the user can input their own input parameters. There is also a simulation mode, where predefined input parameters (representing the Eyjafjallajökull eruption of 2010) are used.
+Our model can be run with different settings:
+
+**Test or Simulation**:
+
+The **Test** mode initializes constant wind fields with constant wind speed and wind direction. In this mode the wind field
+does not change during the whole modeling process. As indicated this mode is primarily for (functionality) testing purposes.
+Wind speeds for U-wind and V-wind components can be specified by the user.
+As the wind fields are created artificially, the user can specify the model resolution too.
+
+
+
 
 
 ---
