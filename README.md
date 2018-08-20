@@ -13,7 +13,17 @@ _Benjamin Schuepbach, 14-100-564, benjamin.schuepbach@students.unibe.ch_
 
 #### About our Model
 
-This project is our homework submission for the seminar  _438745-FS2018-0- Geodatenanalyse und Modellierung_ at the University of Bern in Switzerland. We intended to create a python model of [the ash plume dispersion after the eruption of Eyjafjallajökull in 2010](https://en.wikipedia.org/wiki/2010_eruptions_of_Eyjafjallaj%C3%B6kull).
+This project is our homework submission for the seminar  _438745-FS2018-0- Geodata analysis and modeling_ at the University of Bern in Switzerland. We built a model of [the ash plume dispersion after the eruption of Eyjafjallajökull in 2010](https://en.wikipedia.org/wiki/2010_eruptions_of_Eyjafjallaj%C3%B6kull).
+
+To build our model we worked with Python v.2.7.0 within a Conda Environment.
+
+The model dynamics is inspired by the many different particle-transport-models that exist and which often base on the advection-diffusion equation (as described in e.g. Folch 2012).
+We decided however to implement simplified transport-diffusion dynamics.
+The transport of the particles is determined by wind direction and wind speed.
+Therefore, we classified the surrounding cells according to the wind-direction.
+Depending on the wind speed, different percentages of the cells concentration are transported.
+
+For further information on the transport and diffusion process, please consider the explanations below.
 
 
 **Testing & Simulation Modes**
