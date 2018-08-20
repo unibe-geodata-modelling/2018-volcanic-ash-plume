@@ -243,15 +243,26 @@ The **particle concentration raster** stores the different ash concentration dis
   360° by the 8 surrounding cells, resulting in a classification where each surrounding cell falls between a 45° range.
   
   <img src="https://github.com/unibe-geodata-modelling/2018-volcanic-ash-plume/blob/Figures/Cell_classification.png" alt="Classification" width="400" height="350">
-   Figure 1: Classification of the surrounding cells.<br>
+   Figure 1: Classification of the surrounding cells.
+   <br>
 
 
   **Figures 2 and 3:**
   
+  *Figure 2* shows an example wind field with constant wind field with only U-wind components as it could typically be
+  running the model in the **Test** mode.
+  
+  The calculated *wind direction angle* in this example would be **90°** as there is only a U-wind component present in the
+  two **wind rasters**. By the means of this angle and the explained cell classification (*see Figure 1*) the receiving wind
+  transport direction cell would therefore be **Cell 3** (*see Figure 3*).
+  
+  *Attention: Please remember that in the model the U- and V-wind component are stored in separate rasters!*
   
 <img src="https://github.com/unibe-geodata-modelling/2018-volcanic-ash-plume/blob/Figures/Wind_Field.png" width="400" height="350">
 Figure 2: Wind field with constant wind speeds (25 m/s).<br>
 
+<img src="https://github.com/unibe-geodata-modelling/2018-volcanic-ash-plume/blob/Figures/Transport_model.png" width="350" height="325">
+Figure 3: Particle transport according to wind field in Figure 2.<br>
 
 Then, by the means of the calculated *wind direction angle* we then
 
