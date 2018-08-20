@@ -238,7 +238,7 @@ The **particle concentration raster** stores the different ash concentration dis
   (column).<br>
   
   **Figure 1:**<br>
-  Each surrounding cell is classified in the model starting by the index *i - 1*, *j* (Cell 1) proceeding clockwise till
+  Each surrounding cell is classified in the model starting by the index *i - 1*, *j*  (Cell 1) proceeding clockwise till
   *i - 1*, *j - 1* <br>(Cell 8). Further, the cells are classified with respect to the 360° circle. We therefore divided the
   360° by the 8 surrounding cells, resulting in a classification where each surrounding cell falls between a 45° range.
   
@@ -253,8 +253,20 @@ The **particle concentration raster** stores the different ash concentration dis
   running the model in the **Test** mode.
   
   The calculated *wind direction angle* in this example would be **90°** as there is only a U-wind component present in the
-  two **wind rasters**. By the means of this angle and the explained cell classification (*see Figure 1*) the receiving wind
+  two *wind rasters*. By the means of this angle and the explained cell classification (*see Figure 1*) the receiving wind
   transport direction cell would therefore be **Cell 3** (*see Figure 3*).
+  
+  As mentionned before, the particle transport depends not only on wind direction, but on wind speed too. That is were
+  the *maximal wind speed* and the *spatial model resolution* comes into play:
+  
+  Let's assume that the spatial model resolution is **80 km**. If the calculated *maximal wind speed* exceeds the spatial
+  model resolution (here 80 km/h) then **100%** of the ash concentration in the Cell ( *i* , *j* ) is transported to Cell 3.
+  Hence, if the maximal wind speed is lower than 80 km/h, then only a predefined proportion (less than 100%) of the ash
+  concentration will be freighted to Cell 3.
+  
+  That is actually not the whole story. What is with the diffusion ash concentration part?<br> 
+  The amount of ash concentration dedicated to diffusion is subtracted before the transport process takes place.
+  So, in the example only **100% * (total ash concentration - ash diffusion concentration amount)** is transported to Cell 3.
   
   *Attention: Please remember that in the model the U- and V-wind component are stored in separate rasters!*
   
@@ -262,7 +274,8 @@ The **particle concentration raster** stores the different ash concentration dis
 Figure 2: Wind field with constant wind speeds (25 m/s).<br>
 
 <img src="https://github.com/unibe-geodata-modelling/2018-volcanic-ash-plume/blob/Figures/Transport_model.png" width="350" height="325">
-Figure 3: Particle transport according to wind field in Figure 2.<br>
+  Figure 3: Particle transport according to wind field in Figure 2.
+  <br>
 
 Then, by the means of the calculated *wind direction angle* we then
 
