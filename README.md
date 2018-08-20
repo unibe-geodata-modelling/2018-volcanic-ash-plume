@@ -363,7 +363,9 @@ the model results can easily be displayed as a GIF file.
 ---
 
 
-### What our Model does (How to Volcano)
+### Control Mechanism
+
+
 
 
 
