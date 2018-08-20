@@ -225,15 +225,27 @@ The **particle concentration raster** stores the different ash concentration dis
   
   For each cell of the **particle concentration raster** the same procedure is performed:<br>
   
-  **2.1)** First, the wind direction is calculated. This is done by calculating the angle resulting from both components.
+  **2.1)** First, the *wind direction* is calculated. This is done by calculating the angle resulting from both components.
   
-  **2.2)** Second, the maximal wind speed between the individual components and also the resulting wind speed of both wind
+  **2.2)** Second, the *maximal wind speed* between the individual components and also the resulting wind speed of both wind
   components together is calculated.
 
   **The transport mechanism works as follows (See Figures below):**<br>
-     
+  
+  Say the model is processing the cell of the **particle concentration raster** with the given indices *i* (row) and *j*
+  (column).<br>
+  
+  **Figure 1:**<br>
+  Each surrounding cell is classified in the model starting by the index *i - 1*, *j* (Cell 1) proceeding clockwise till
+  *i - 1*, *j - 1* <br>(Cell 8). Further, the cells are classified with respect to the 360° circle. We therefore divided the
+  360° by the 8 surrounding cells, resulting in a classification where each surrounding cell falls between a 45° range.
+  
+  Then, by the means of the calculated *wind direction angle* 
+  
+ 
+<img src="https://github.com/unibe-geodata-modelling/2018-volcanic-ash-plume/blob/Figures/Cell_classification.png" alt="Classification" width="400" height="350">
+Figure 1: Classification of the surrounding cells.<br>
 
-(
 
 The first iteration (put into words) would look something like this:
 
