@@ -114,8 +114,13 @@ Needed Parameters are:
 
 + **Location of Volcano**
 
-   The location of a volcano can be entered here.  
-   This parameters takes coordinates in the lng/lat format (in decimal degrees).  
+   In the **Manual** mode the user can specify arbitrary *longitude* and *latitude* values for the volcano 
+   (point source) location. 
+   
+   In the **Eyjafjallakökull** mode the location of the volcano is specified as follows:<br> &rarr; *Longitude:* -19.625 
+   <br> &rarr; *Latitude:* 63.625.
+   
+   *Attention: Be aware that the model uses decimal coordinate values!*
 
 
 + **Ash Plume height**
