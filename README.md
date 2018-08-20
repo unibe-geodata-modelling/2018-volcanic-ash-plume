@@ -240,12 +240,16 @@ The **particle concentration raster** stores the different ash concentration dis
   *i - 1*, *j - 1* <br>(Cell 8). Further, the cells are classified with respect to the 360° circle. We therefore divided the
   360° by the 8 surrounding cells, resulting in a classification where each surrounding cell falls between a 45° range.
   
-  Then, by the means of the calculated *wind direction angle* 
-  
- 
-<img src="https://github.com/unibe-geodata-modelling/2018-volcanic-ash-plume/blob/Figures/Cell_classification.png" alt="Classification" width="400" height="350">
+  <img src="https://github.com/unibe-geodata-modelling/2018-volcanic-ash-plume/blob/Figures/Cell_classification.png" alt="Classification" width="400" height="350">
 Figure 1: Classification of the surrounding cells.<br>
 
+  **Figures 2 and 3:**
+   
+<img src="https://github.com/unibe-geodata-modelling/2018-volcanic-ash-plume/blob/Figures/Wind_Field.png" width="400" height="350">
+Figure 2: Wind field with constant wind speeds (25 m/s).<br>
+
+
+Then, by the means of the calculated *wind direction angle* we then
 
 The first iteration (put into words) would look something like this:
 
