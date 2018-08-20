@@ -245,6 +245,7 @@ The **particle concentration raster** stores the different ash concentration dis
   <img src="https://github.com/unibe-geodata-modelling/2018-volcanic-ash-plume/blob/Figures/Cell_classification.png" alt="Classification" width="400" height="350">
    Figure 1: Classification of the surrounding cells.
    <br>
+   <br>
 
 
   **Figures 2 and 3:**
@@ -260,13 +261,14 @@ The **particle concentration raster** stores the different ash concentration dis
   the *maximal wind speed* and the *spatial model resolution* comes into play:
   
   Let's assume that the spatial model resolution is **80 km**. If the calculated *maximal wind speed* exceeds the spatial
-  model resolution (here 80 km/h) then **100%** of the ash concentration in the Cell ( *i* , *j* ) is transported to Cell 3.
-  Hence, if the maximal wind speed is lower than 80 km/h, then only a predefined proportion (less than 100%) of the ash
-  concentration will be freighted to Cell 3.
+  model resolution (here 80 km/h) then **100% (1.0)** of the ash concentration in the Cell ( *i* , *j* ) is transported to 
+  Cell 3.
+  Hence, if the maximal wind speed is lower than 80 km/h, then only a predefined proportion of less than 100% (< 1.0) of 
+  the ash concentration will be freighted to Cell 3.
   
   That is actually not the whole story. What is with the diffusion ash concentration part?<br> 
   The amount of ash concentration dedicated to diffusion is subtracted before the transport process takes place.
-  So, in the example only **100% * (total ash concentration - ash diffusion concentration amount)** is transported to Cell 3.
+  So, in the example only **1.0 * (total ash concentration - diffusion concentration amount)** is transported to Cell 3.
   
   *Attention: Please remember that in the model the U- and V-wind component are stored in separate rasters!*
   
@@ -278,8 +280,22 @@ Figure 2: Wind field with constant wind speeds (25 m/s).<br>
   <br>
   <br>
 
-**3 Diffusion of particles**
-
+**3) Diffusion of particles**
+  
+  After the particle transport mechanism has been completed, the diffusion part begins.
+  
+  Our model provides two different diffusion mechanisms. The amount of ash concentration which is diffused, depends
+  on the initially defined *diffusion percentage*.
+  
+  Continuing the above example, the Cell *i* , *j* contains now the ash concentration of the diffusion part (which was not
+  transported) and a possible transported part from neighbouring cells.<br>
+  The current concentration in Cell *i* , *j* is thus:<br>
+  
+  **current concentration = 1 - 1.0 * (total ash concentration - diffusion concentration amount) + transported concentration**
+  
+  which is equal to
+  
+  **current concentration =** (remaining) **diffusion concentration amount + transported concentration** (in this cell).
 
 
 + Once wind direction is figured out, we calculate the percentage of the value in our ash concentration raster that should be
