@@ -276,21 +276,10 @@ Figure 2: Wind field with constant wind speeds (25 m/s).<br>
 <img src="https://github.com/unibe-geodata-modelling/2018-volcanic-ash-plume/blob/Figures/Transport_model.png" width="350" height="325">
   Figure 3: Particle transport according to wind field in Figure 2.
   <br>
+  <br>
 
-Then, by the means of the calculated *wind direction angle* we then
+**3 Diffusion of particles**
 
-The first iteration (put into words) would look something like this:
-
-+ Read cell with index (0,0) of both wind rasters
-+ Read cell with index (0,0) of the ash concentration raster
-
-In order to check, based on wind direction, which cell needs to recieve the output of each calculation, we followed the same principle used in the ArcGIS Tool [_Flow Direction_](http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/how-flow-direction-works.htm). This tool assigns each of the neighbouring 8 cells an individual value, where each value represents a direction:
-
-
-![alt_text](https://github.com/unibe-geodata-modelling/2018-volcanic-ash-plume/blob/master/mediaResources/readme_resources/flow_acc.JPG)
-
-
-In our case, we assigned each neighbouring cell a value between 0 and 7, starting from cell (x-1,y-1) with value 0 and then continuing to add 1 in a clockwise motion. Winds that go straight North would therefore have a value of 1 assigned in a particular cell.
 
 
 + Once wind direction is figured out, we calculate the percentage of the value in our ash concentration raster that should be
