@@ -117,7 +117,9 @@ Required parameters and components are:
    In the **Manual** mode the user can specify arbitrary *longitude* and *latitude* values for the volcano 
    (point source) location. 
    
-   In the **Eyjafjallakökull** mode the location of the volcano is specified as follows:<br> &rarr; *Longitude:* -19.625 
+   In the **Eyjafjallakökull** mode the location of the volcano is specified as follows:
+   
+   &rarr; *Longitude:* -19.625 
    <br> &rarr; *Latitude:* 63.625.
    
    *Attention: Be aware that the model uses decimal coordinate values!*
@@ -241,10 +243,12 @@ The **particle concentration raster** stores the different ash concentration dis
   360° by the 8 surrounding cells, resulting in a classification where each surrounding cell falls between a 45° range.
   
   <img src="https://github.com/unibe-geodata-modelling/2018-volcanic-ash-plume/blob/Figures/Cell_classification.png" alt="Classification" width="400" height="350">
-Figure 1: Classification of the surrounding cells.<br>
+   Figure 1: Classification of the surrounding cells.<br>
+
 
   **Figures 2 and 3:**
-   
+  
+  
 <img src="https://github.com/unibe-geodata-modelling/2018-volcanic-ash-plume/blob/Figures/Wind_Field.png" width="400" height="350">
 Figure 2: Wind field with constant wind speeds (25 m/s).<br>
 
