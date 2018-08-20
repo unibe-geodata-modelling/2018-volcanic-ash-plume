@@ -72,19 +72,44 @@ Needed Parameters are:
 
 + **Wind Data**
 
-   Wind Data is fed into our model in raster format and taken from [here](insert link here!).  
-   We used two seperate Inputs, one for lat(u)-winds and one for lng(v)-winds.  
+     In the **Simulation** mode the user has to provide 2 NetCDF-filenames (ending in ".nc") for both U-wind and
+     V-wind components. It is very important that all variables, except the ones for U- and V-wind components are identical!
+     
+     In the **Test** mode the user can specify the constant wind speeds for both wind-components.
+     
+     In both cases the initialised wind fields consist of two rasters with one containing the values for the U-wind component
+     and the other for the V-wind component.
 
 
-+ **Time**
++ **Timesteps**
 
-   Time is defined as steps, which in turn represent iterations. Each step represents 6 hours and one model iteration.  
-   This was derived from how often atmospheric winds are measured, which is in 6-hour intervalls.  
+   Time is defined as steps, which in turn represent iterations.
+   
+   In the **Simulation** mode the user can choose for which available time period (in days) the simulation should run.
+   The amount of days is calculated from available timesteps and temporal resolution. The number of timesteps is then
+   adjusted according to the chosen period length.
+   
+   In the **Test** mode the hourly resolution is by default 1 hour. Thus, the user input equals directly the timesteps
+   executed.
 
 
 + **Resolution**
-
-   With this parameter, the pixel-resolution (in km units) of our model can be changed.  
+   
+   * Spatial Resolution
+      
+      In the **Simulation** mode the user has to specify the spatial resolution such that it equals the one of the provided
+      wind datasets.
+      
+      In the **Test** mode the spatial resolution can be chosen arbitrary. To not obtain non-sense results both, the resolution
+      in kilometers as well as the resolution in degrees should be chosen interdependently.
+      
+   * Temporal Resolution
+   
+      In the **Simulation** mode the user has to specify the temporal resolution (in hours) such that it equals the one of the
+      provided wind datasets.
+      
+      In the **Test** mode the temporal resolution cannot be changed and is by default 1 hour.
+   
 
 
 + **Location of Volcano**
