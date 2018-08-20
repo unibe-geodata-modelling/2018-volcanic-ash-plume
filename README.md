@@ -44,7 +44,7 @@ NetCDF-files, one for each wind component. It is very important that all variabl
 _Attention: The only supported data format is the NetCDF-format!_
 
 
-**Manual Parametrisation or Eyjafjallajökull Parametrisation:** Choices related to eruption characteristics
+**Manual Parameterisation or Eyjafjallajökull Parameterisation:** Choices related to eruption characteristics
 
 The **Manual** mode allows the complete specification of all parameters needed to calculate the erupted ash concentration.
 This includes the _geographic location_ of the volcano, the _plume height_, the _durance_ of the eruption, the _mass fraction_
@@ -389,7 +389,7 @@ The colouring and spacing of the colorbars is strongly inspired by the [EUMETRAI
 All the specified (and relevant) parameters used in a specific model run are visible on the individual plots and are
 updated automatically if different model settings and input parameters are used.
 
-For the **Eyjafjallajökull simulation** mode we use ERA-Interim data of April 2010 which we directly obtained from
+For the **Eyjafjallajökull simulation** mode we use 500hPa ERA-Interim wind data of April 2010 which we directly obtained from
 the [ECMWF](https://www.ecmwf.int/en/forecasts/datasets/archive-datasets/reanalysis-datasets/era-interim) website.
 
 In this section we present some of our results we got from our model runs.<br>
@@ -415,7 +415,45 @@ this section.
 
 ### Dynamics related limitations
 
-Limitations related to the model dynamics consists of 
+Limitations related to the model dynamics consists of issues related to spatial and temporal model resolution as well as to fall-out and dispersion.
+
+#### Resolution-related issues
+
+The first dynamics-related problem considering the model resolution is, that with each timestep the 
+**maximal particle transport distance** is limited to the spatial resolution of the model. No matter whether maximum 
+wind speeds are much higher than the distance to traverse a model cell, the particles will maximally be transported as far as the model resolution.
+
+Example:<br>
+With a *spatial resolution* of **80 km** and *maximum windspeeds* of **160 km/ h** the particles won't be transported further than 80 km although the potential transport is twice as far.
+
+Another issue is the temporal resolution. The temporal resolution of the wind fields we used in the "Results" section is 
+six-hourly. This means we have only one new wind field every six hours.<br>
+Using one wind field per timestep would however not make sense as the spatial issue even aggravates as the particle transport
+distance is heavily underestimated.
+
+Our model attempts to reduce this temporal resolution issue by iterating with the unchanged wind fields for the durance of the model resolution.
+
+#### Fall-out related issues
+
+In addition to model resolution related issues, there are also limitation with the fall-out parameterisation
+
+First, the ash can sometimes stay in air for several days without any major fall-out. This is not considered in our model
+as fall-out begins from the first iteration on. As we model only one specific level we neglect this issue.
+
+Another fall-out issue is its constant parameterisation. Although we limited our simulation to particles smaller than
+63 micrometers, the ash particle size can be still quite diverse. The constant fall-out does therefore not account for the
+fall-out velocity of different particle size fractions. This is clearly a limitation of our model.
+
+### Other issues
+
+General issues consider some code functionality problems. These are not discussed in this documentation.
+
+### Outlook
+
+As our model operates almost exclusively with raster data we can imagine an implementation of this model in a geographic
+information system. A combination with air space territories could be worth a try to detect flight zone restrictions due
+to ash concentrations.
+
 
 
 ---
