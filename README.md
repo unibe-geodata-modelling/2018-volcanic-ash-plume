@@ -365,14 +365,37 @@ the model results can easily be displayed as a GIF file.
 
 ### Control Mechanism
 
+To guarantee that the model does correct calculations and that no mass is created or disappearing mysteriously, we implemented
+a control mechanism in our model.
 
+**Principle:**<br>
+With each timestep the fall-out is summed-up and stored. After the transport and diffusion procedure is complete, all
+concentrations of the very last **particle concentration raster** are summed-up and added to the summed-up fall-out.<br>
+Simultaneously, each eruption of ash concentration is summed-up as well.
 
+In the end **sum of eruptions** has to be equal to the sum of **Sum final particle raster + Sum fall-out**.
 
 
 ---
 
 
 ## Results
+
+As mentionned in the "What Our Model does (How to Volcano)" section, our model generates three different maps. All maps are
+realized with the **Basemap** package.
+
+The colouring and spacing of the colorbars is strongly inspired by the [EUMETRAIN's Volcanic Ash Training Module](http://eumetrain.org/data/1/144/navmenu.php?page=4.0.0).
+
+In this section we present some of our results we got from our model runs.<br>
+A validation was not yet performed and thus the adequacy of the model for the **Eyjafjallajökull eruption 2010** will not be
+discussed here.<br>
+A possible validation strategy could be a comparison with other transport-dispersion models, such as the visualisation
+on the [EUMETRAIN's Volcanic Ash Training Module](http://eumetrain.org/data/1/144/navmenu.php?page=4.0.0).
+
+### Figure 1 - World Map
+
+This figure shows the model simulation on a global map.
+
 
 
 ### Development Phase 1
