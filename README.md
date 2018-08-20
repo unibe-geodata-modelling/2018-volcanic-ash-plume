@@ -386,6 +386,9 @@ realized with the **Basemap** package.
 
 The colouring and spacing of the colorbars is strongly inspired by the [EUMETRAIN's Volcanic Ash Training Module](http://eumetrain.org/data/1/144/navmenu.php?page=4.0.0).
 
+All the specified (and relevant) parameters used in a specific model run are visible on the individual plots and are
+updated automatically if different model settings and input parameters are used.
+
 In this section we present some of our results we got from our model runs.<br>
 A validation was not yet performed and thus the adequacy of the model for the **Eyjafjallajökull eruption 2010** will not be
 discussed here.<br>
@@ -396,30 +399,8 @@ on the [EUMETRAIN's Volcanic Ash Training Module](http://eumetrain.org/data/1/14
 
 This figure shows the model simulation on a global map.
 
+The parameters for this model run are specified on the plot.
 
-
-### Development Phase 1
-
-
-In development phase 1 we tried to implement basic ash dispersion in a 2D environment with constant wind speeds. 
-Afterwards, the only factors reducing the amount of ash in the air were our fallout constant as well as to some degree our 
-diffusion constant (which only really thinned out ash pockets, not really leading to reduced amout of ash in the 'atmosphere')
-
-
-Here are a few of our earliest results:
-(Hover your mouse over the following pictures for explanations)
-
-![alt text](https://github.com/unibe-geodata-modelling/2018-volcanic-ash-plume/blob/master/mediaResources/testruns_GIFs/test.gif "First implementation, only mass transport, no diffusion, no fallout")
-
-![alt text](https://github.com/unibe-geodata-modelling/2018-volcanic-ash-plume/blob/master/mediaResources/testruns_GIFs/test_3.gif "Same as first one, although with 4 ash-source pixels instead of 1")
-
-![alt_text](https://github.com/unibe-geodata-modelling/2018-volcanic-ash-plume/blob/master/mediaResources/testruns_GIFs/Ashplume2.gif "Ash plume with implemented diffusion- and fallout coefficients")
-
-
-### Development Phase 2
-
-
-In development phase 2 additional functionality such as different modes was added. At this stage we tried to implement the use of actual wind data and coordinates from the 2010 eruption. With the decision to go back to Anaconda Python 2.7 we could also have the result displayed on a basemap.
 
 ---
 
