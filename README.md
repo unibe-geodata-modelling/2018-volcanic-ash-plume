@@ -232,7 +232,7 @@ The **particle concentration raster** stores the different ash concentration dis
   **2.2)** Second, the *maximal wind speed* between the individual components and also the resulting wind speed of both wind
   components together is calculated.
 
-  **The transport mechanism works as follows (See Figures below):**<br>
+  **The transport mechanism works as follows (see Figures below):**<br>
   
   Say the model is processing the cell of the **particle concentration raster** with the given indices *i* (row) and *j*
   (column).<br>
@@ -296,19 +296,23 @@ Figure 2: Wind field with constant wind speeds (25 m/s).<br>
   which is equal to
   
   **current concentration =** (remaining) **diffusion concentration amount + transported concentration** (in this cell).
+  
+  Let's now look at the different diffusion mechanisms!
+  
+  
+  
+  **Diffusion in all directions**
+  
+  
+  <img src="https://github.com/unibe-geodata-modelling/2018-volcanic-ash-plume/blob/Figures/Diff_all.png" width="350" height="325">
+  Figure 3: Particle transport according to wind field in Figure 2.
+  <br>
+  <br>
 
 
-+ Once wind direction is figured out, we calculate the percentage of the value in our ash concentration raster that should be
-transported. This is dependent mostly on wind speed, diffusion as well as a constant fallout coefficient. We iterate over each cell
-of all rasters like this, all the while saving the calculated values to our cache array. Calculation of all cells in the cache array
-marks the end of one iteration of the main loop. At the end of each such iteration, the ash concentration raster will be overwritten
-by the cache array. 
 
-+ In order to simulate an eruption, cells at the pre-specified coordinates of the volcano are set to recieve an eruption value at each 
-timestep, introducing ash into the system. These values are stored in a list.
-
-
-Finally, our model outputs a fully drawn map for each iteration of the main loop. This is so in the end, results using this model can easily be displayed as a GIF file.
+Finally, our model outputs three fully drawn maps for each iteration of the transport and diffusion loop. So in the end, 
+the model results can easily be displayed as a GIF file.
 
 
 ---
