@@ -11,7 +11,7 @@ _Benjamin Schuepbach, 14-100-564, benjamin.schuepbach@students.unibe.ch_
 
 
 
-### About our Model
+## About Our Model
 
 This project is our homework submission for the seminar  _438745-FS2018-0- Geodata analysis and modeling_ at the University of Bern in Switzerland. We built a model of [the ash plume dispersion after the eruption of Eyjafjallajökull in 2010](https://en.wikipedia.org/wiki/2010_eruptions_of_Eyjafjallaj%C3%B6kull).
 
@@ -25,20 +25,34 @@ Depending on the wind speed, different percentages of the cells concentration ar
 
 For further information on the transport and diffusion process, please consider the explanations below.
 
+---
 
 ### Model Settings
 
 Our model can be run with different settings:
 
-**Test or Simulation**:
+**Test or Simulation**: Choices related to wind field initialisation
 
 The **Test** mode initializes constant wind fields with constant wind speed and wind direction. In this mode the wind field
 does not change during the whole modeling process. As indicated this mode is primarily for (functionality) testing purposes.
 Wind speeds for U-wind and V-wind components can be specified by the user.
 As the wind fields are created artificially, the user can specify the model resolution too.
 
+The **Simulation** mode initializes wind fields out of NetCDF-wind files provided by the user. The user has to provide two
+NetCDF-files, one for each wind component. It is very important that all variables, except the ones for U- and V-wind components are identical!
+
+_Attention: The only supported data format is the NetCDF-format!_
 
 
+**Manual Parametrisation or Eyjafjallajökull Parametrisation:** Choices related to eruption characteristics
+
+The **Manual** mode allows the complete specification of all parameters needed to calculate the erupted ash concentration.
+This includes the _geographic location_ of the volcano, the _plume height_, the _durance_ of the eruption, the _mass fraction_
+of the particles (<63 micrometers), as well as _mass_ and _volume rates_. This results in one single concentration value which
+is erupted for the specified durance. Again, this mode is primarily for testing purposes.
+
+In the **Eyjafjallakökull** mode the erupted ash concentration is calculated with predefined values for all needed parameters.
+We therefore use literature based values for the Eyjafjallajökull eruption event back in 2010.
 
 
 ---
