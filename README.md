@@ -121,12 +121,51 @@ Needed Parameters are:
    <br> &rarr; *Latitude:* 63.625.
    
    *Attention: Be aware that the model uses decimal coordinate values!*
+   
++ **Particle fall-out**
+     
+     The particle *fall-out* parameter describes what amount of particles falls out of the system by each timestep. <br>
+     The particle fall-out can be specified by the user in all model settings and should be given as **1 - percent** value
+     [0-1].
+     
+     The default fall-out was determined by the idea that the finer particles can remain in the air for several days without
+     major fall-out. The default fall-out assumes that this durance is 6 days.
+     
++ **Diffusion**
+     
+     * Diffusion coefficient
+          
+          The *diffusion coefficient* was calculated according to a Gaussian plume model and was calculated as follows
+          (assuming a neutrally stable atmosphere): <br>
+          <br>**Diffusion coefficient = 68 x resolution^0.894  &rarr; (*Cimbala 2018*)**
+          
+     * Diffusion Percentage
+          
+          The *diffusion percentage* determines how much of the ash concentration is diffused.
+          
+          
+          For the calculation of the default diffusion percentage the diffusion coefficient is used.
+          As the Gaussian Plume model may not be accurate for synoptic scale dispersion / diffusion the user can also
+          choose an arbitrary diffusion percentage in the range between 0 and 1.
+          
+     * Diffusion Type
+          
+          We implemented two different *diffusion types* in our model (see Section "What our Model does (How to Volcano)").
+          
+          The choices are as follows:<br>
+          1 - Diffusion in all directions **(Choice: 0)**<br>
+          2 - Gradient-dependent diffusion **(Choice: 1)**<br>
+          3 - no diffusion **(Choice: any other number)**
 
 
 + **Ash Plume height**
+     
+     The *ash plume height* specifies the height of the erupted ash cloud in kilometers.
+     
+     As already declared above, in the **Manual** mode the user can specify the ash plume height, while in the
+     **Eyjafjallajökull** mode predefined values are used.
 
-   asdfasdf.  
-   asdfasdf.  
+   
 
 + **Mass- and Volume Rates & Ash Fraction**
 
