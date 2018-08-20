@@ -66,7 +66,7 @@ We obtained the Eyjafjallajökull 2010 concentration by using the following lite
 In the following all needed input parameters are listed and shortly explained. Depending on the chosen model settings
 the user may be prompted to provide input values.
 
-The parameters and components are:
+Required parameters and components are:
 
 
 
@@ -194,23 +194,19 @@ The parameters and components are:
 ---
 
 
-## What our Model does (How to Volcano)
-As mentioned before, our model only takes raster data or constants as inputs. It is then built around reading and manipulating these rasters:
+### What our Model does (How to Volcano)
 
-+ Wind Rasters
-   
-   See above
-   
-   
-+ Ash Concentration Raster
-   
-   See above
-   
-   
-+ Cache Raster (temp_arr)
+#### Raster Calculations
 
-   The Cache Raster is a temporary numpy array used to save calculated values during iterations. This is necessary because one cannot simply overrite the ash concentration raster, due to the possibility of later needing the original value of a cell. For example: If wind were constant and one-directional, if one were to overwrite the value of the cell where particles would move to, one could not calculate values of cells after that one. In order to avoid this problem, we temporarily save the calculated values to a new raster.
+After the initialisation of all required input parameters the model performs more or less raster calculations.
 
+The two most important rasters are:<br>
+1) U- and V-wind speed rasters
+2) Particle concentration raster
+
+The **particle concentration raster** stores the different ash concentration distributions for each timestep.
+
+#### Basic Principles (A typical model timestep)
 
 The first iteration (put into words) would look something like this:
 
