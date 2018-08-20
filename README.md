@@ -415,26 +415,27 @@ The parameters for this model run are specified on the plot.
 
 
 ## Aknowledgements
+                            
+Cimbala, J. M. (2018): Gaussian Plume Model and Dispersion Coefficients. Pennsylvania State University.
+              Latest revision: 30th January 2018.
+              Available under: https://www.mne.psu.edu/cimbala/me433/Lectures/Tables_for_Gaussian_Plume_Model.pdf
+              
+Folch, A. (2012): A review of tephra transport and dispersal models: Evolution, current status, and future perspectives.
+              In: Journal of Volcanology and Geothermal Research 235-236: 96-115.
+              [DOI: 10.1016/j.jvolgeores.2012.05.020](https://www.sciencedirect.com/science/article/pii/S0377027312001588).
+              
+Gudmundsson, M.T., Thordarson, T., Hoeskuldsson, A., Larsen, G., Bjoernsson, H., Prata, F.J., Oddsson, B.,
+             Magnusson, E., Hoegnadottir, T., Petersen, G.N., Hayward, C.L., Stevenson, J.A., Jonsdottir, I.
+             (2012): Ash generation and distribution from the April-May 2010 eruption of Eyjafjallajoekull, Iceland.
+             In: Scientific Reports 2:572: S.1-12.
+             [DOI: 10.1038/srep00572](https://www.nature.com/articles/srep00572).
+                      
 Mastin, L.G., Guffanti, M., Servranckx, R., Webley, P., Barsotti, S., Dean, K., Durant, A, Ewert, J.W., Neri, A.,
               Rose, W.I., Schneider, D., Siebert, L., Stunder, B., Swanson, G., Tupper, A., Volentik, A.,
               Waythomas, C.F. (2009): A multidisciplinary effort to assign realistic source parameters to models of
               volcanic ash-cloud transport and dispersion during eruptions.
               In: Journal of Volcanology and Geothermal Research 186: 10-21.
               DOI: 10.1016/j.jvolgeores.2009.01.008
-              
-Folch, A. (2012): A review of tephra transport and dispersal models: Evolution, current status, and future perspectives.
-              In: Journal of Volcanology and Geothermal Research 235-236: 96-115.
-              DOI: 10.1016/j.jvolgeores.2012.05.020
-              
-Cimbala, J. M. (2018): Gaussian Plume Model and Dispersion Coefficients. Pennsylvania State University.
-              Latest revision: 30th January 2018.
-              Available under: https://www.mne.psu.edu/cimbala/me433/Lectures/Tables_for_Gaussian_Plume_Model.pdf
-              
-Gudmundsson, M.T., Thordarson, T., Hoeskuldsson, A., Larsen, G., Bjoernsson, H., Prata, F.J., Oddsson, B.,
-             Magnusson, E., Hoegnadottir, T., Petersen, G.N., Hayward, C.L., Stevenson, J.A., Jonsdottir, I.
-             (2012): Ash generation and distribution from the April-May 2010 eruption of Eyjafjallajoekull, Iceland.
-             In: Scientific Reports 2:572: S.1-12.
-             DOI: 10.1038/srep00572
 
 
 
