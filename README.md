@@ -434,8 +434,8 @@ Figure 9: Europe Zoom: only Diffusion, Diffusion-Type: Gradient-dependent.
   <br>
   
   
-<img src="https://github.com/unibe-geodata-modelling/2018-volcanic-ash-plume/blob/Figures/gradients.gif" width="900" height="500">
-Figure 9: Europe Zoom: Transport and Diffusion-Type: All Directions.
+<img src="https://github.com/unibe-geodata-modelling/2018-volcanic-ash-plume/blob/Figures/EUROPEZOOM-gif.gif" width="900" height="500">
+Figure 10: Europe Zoom: Transport and Diffusion-Type: All Directions.
   <br>
   <br>
 
