@@ -190,6 +190,10 @@ Required parameters and components are:
      
      **concentration = mass rate * ash fraction / volume rate / resolution^2**
      
+     The final division with the squared resolution accounts for the issue that the spatial resolution of the model is
+     almost all cases much larger than volcanic eruption area (point source!). The consideration of this areal difference 
+     therefore slightly reduces the ash concentration in the model.
+     
 
 ---
 
@@ -206,7 +210,30 @@ The two most important rasters are:<br>
 
 The **particle concentration raster** stores the different ash concentration distributions for each timestep.
 
-#### Basic Principles (A typical model timestep)
+#### Basic Principles (A typical model run)
+
+**1) Eruption is happening!**
+     
+  By its initialisation the **particle concentration raster** is empty. Thus, before transport and diffusion can happen an
+  eruption has to happen. This is realized by adding the calculated concentration to the raster cell which is closest to the
+  specified *geographic location* of the volcano.
+  
+**2) Transport of particles**
+
+  After the eruption has happened, the ash can be transported by the wind.<br>
+  The transport depends on both wind speed and wind direction.
+  
+  For each cell of the **particle concentration raster** the same procedure is performed:<br>
+  
+  **2.1)** First, the wind direction is calculated. This is done by calculating the angle resulting from both components.
+  
+  **2.2)** Second, the maximal wind speed between the individual components and also the resulting wind speed of both wind
+  components together is calculated.
+
+  **The transport mechanism works as follows (See Figures below):**<br>
+     
+
+(
 
 The first iteration (put into words) would look something like this:
 
