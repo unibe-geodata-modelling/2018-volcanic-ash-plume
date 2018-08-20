@@ -307,10 +307,11 @@ Figure 2: Wind field with constant wind speeds (25 m/s).<br>
   
   **3.1) Diffusion in all directions**
   
-  In this diffusion type the 
-  
-  <img src="https://github.com/unibe-geodata-modelling/2018-volcanic-ash-plume/blob/Figures/Diff_all.png" width="350" height="325">
-  Figure 3: Particle transport according to wind field in Figure 2.
+  In this diffusion type the *diffusion concentration amount* is equally distributed to all 8 surrounding cells. Each cell
+  receives therefore an ash concentration of **diffusion amount / 8** (*see Figure 4*). <br>
+   
+<img src="https://github.com/unibe-geodata-modelling/2018-volcanic-ash-plume/blob/Figures/Diff_all.png" width="350" height="325">
+  Figure 3: Diffusion-Type: All directions.
   <br>
   <br>
 
