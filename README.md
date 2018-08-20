@@ -389,6 +389,9 @@ The colouring and spacing of the colorbars is strongly inspired by the [EUMETRAI
 All the specified (and relevant) parameters used in a specific model run are visible on the individual plots and are
 updated automatically if different model settings and input parameters are used.
 
+For the **Eyjafjallajökull simulation** mode we use ERA-Interim data of April 2010 which we directly obtained from
+the [ECMWF](https://www.ecmwf.int/en/forecasts/datasets/archive-datasets/reanalysis-datasets/era-interim) website.
+
 In this section we present some of our results we got from our model runs.<br>
 A validation was not yet performed and thus the adequacy of the model for the **Eyjafjallajökull eruption 2010** will not be
 discussed here.<br>
