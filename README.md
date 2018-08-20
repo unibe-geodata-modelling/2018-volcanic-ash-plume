@@ -4,7 +4,7 @@
 
 Authors:
 
-_Christoph von Matt, matr.n, uni-email_
+_Christoph von Matt, 13-105-358, christoph.vonmatt@students.unibe.ch_
 
 _Benjamin Schuepbach, 14-100-564, benjamin.schuepbach@students.unibe.ch_
 
