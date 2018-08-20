@@ -405,6 +405,16 @@ This figure shows the model simulation on a global map.
 The parameters for this model run are specified on the plot.
 
 
+### Figure - Europe Zoom
+
+This figure shows a version of Figure 1 with limited extent. Here default extent of this figure is Europe.
+
+With this figures we try to give an impression of how the individual components (transport, all directions diffusion,
+gradient-dependent diffusion) work.
+
+
+
+
 ---
 
 
